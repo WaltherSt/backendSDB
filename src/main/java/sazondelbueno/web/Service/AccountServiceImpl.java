@@ -1,4 +1,5 @@
 package sazondelbueno.web.Service;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,9 +46,9 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public Account updateById(Long id , Account account) {
+    public Account updateById(Long id, Account account) {
         Account c = repository.getReferenceById(id);
-        BeanUtils.copyProperties(account,c,"id");
+        BeanUtils.copyProperties(account, c, "id");
         return repository.save(c);
     }
 }
