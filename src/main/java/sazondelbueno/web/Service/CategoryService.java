@@ -34,7 +34,9 @@ public class CategoryService {
     public Category update (Long id, Category category) {
         Category category1 = repository.getReferenceById(id);
         BeanUtils.copyProperties (category ,category1,"id");
-        return repository.save(category1);
+        repository.save(category1);
+
+        return category1;
     }
     public void delete (Long id) {
         repository.deleteById(id);
